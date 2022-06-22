@@ -70,6 +70,7 @@ function playRound() {
   }
 }
 
+// Plays required number of rounds according to user input
 function game() {
   let rounds = Number(prompt("How many rounds do you want to play?"));
   let score = 0;
@@ -77,7 +78,5 @@ function game() {
   for (let i = 0; i < rounds; i++) {
     score += playRound();
   }
-  console.log(score);
+  console.log(`Score = ${score}`);
 }
-
-game();
