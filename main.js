@@ -1,13 +1,17 @@
+// Get buttons associated with rock, paper or scissors
+const buttons = Array.from(document.getElementsByClassName("action"));
+
+// Event listenrs for the buttons
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    let playerInput = tranformInput(e.target.dataset.value);
+    playRound(playerInput);
+  });
+});
+
 // Coputer's Move
 function computerPlay() {
   return Math.floor(Math.random() * 3) + 1;
-}
-// Get input from user
-function getPlayerInput() {
-  let playerChoice = prompt("Rock, Paper or Scissors").toLowerCase();
-
-  filterInput(playerChoice);
-  return tranformInput(playerChoice);
 }
 
 // Checking if user has provided valid input
@@ -31,6 +35,9 @@ function tranformInput(input) {
 
 // Checks who won
 function checkWinOrLoss(move1, move2) {
+  console.log(`Player-Move: ${move1}`);
+  console.log(`computer move: ${move2}`);
+
   if (move1 === 1) {
     if (move2 === 2) {
       return 0;
@@ -39,7 +46,7 @@ function checkWinOrLoss(move1, move2) {
   }
 
   if (move1 === 2) {
-    if (move2 === 13) {
+    if (move2 === 3) {
       return 0;
     }
     return 1;
@@ -54,20 +61,18 @@ function checkWinOrLoss(move1, move2) {
 }
 
 // Plays one round
-function playRound() {
+function playRound(playerMove) {
   let computerMove = computerPlay();
-  let playerMove = getPlayerInput();
 
   if (computerMove === playerMove) {
     console.log("It's a draw");
-    return 0;
   } else if (checkWinOrLoss(playerMove, computerMove)) {
     console.log("You won! It's pure luck though!");
     return 1;
   } else {
     console.log("Uh-oh! Looks like you lost!");
-    return -1;
   }
+  return 0;
 }
 
 // Plays required number of rounds according to user input
