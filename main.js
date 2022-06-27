@@ -1,5 +1,10 @@
-// Get buttons associated with rock, paper or scissors
+// Get elements from html
 const buttons = Array.from(document.getElementsByClassName("action"));
+const playerScoreContainer = document.getElementById("player-score");
+const computerScoreContainer = document.getElementById("computer-score");
+
+let playerScore = 0;
+let computerScore = 0;
 
 // Event listenrs for the buttons
 buttons.forEach((button) => {
@@ -68,20 +73,22 @@ function playRound(playerMove) {
     console.log("It's a draw");
   } else if (checkWinOrLoss(playerMove, computerMove)) {
     console.log("You won! It's pure luck though!");
-    return 1;
+    updatePlayerScore();
   } else {
     console.log("Uh-oh! Looks like you lost!");
+    updateComputerScore();
   }
   return 0;
 }
 
-// Plays required number of rounds according to user input
-function game() {
-  let rounds = Number(prompt("How many rounds do you want to play?"));
-  let score = 0;
+// Updates player score
+function updatePlayerScore() {
+  playerScore++;
+  playerScoreContainer.textContent = `Player Score: ${playerScore}`;
+}
 
-  for (let i = 0; i < rounds; i++) {
-    score += playRound();
-  }
-  console.log(`Score = ${score}`);
+// Updates computer score
+function updateComputerScore() {
+  computerScore++;
+  computerScoreContainer.textContent = `Computer Score: ${computerScore}`;
 }
