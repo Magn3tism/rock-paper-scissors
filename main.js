@@ -72,8 +72,6 @@ function checkWinOrLoss(move1, move2) {
 // Plays one round
 function playRound(playerMove) {
   let computerMove = computerPlay();
-  // console.log(`Comp: ${computerMove}`);
-  // console.log(`Player: ${playerMove}`);
 
   if (computerMove === playerMove) {
     updateMessage("It's a draw");
