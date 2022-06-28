@@ -77,23 +77,38 @@ function playRound(playerMove) {
     updateMessage("It's a draw");
   } else if (checkWinOrLoss(playerMove, computerMove)) {
     updateMessage("You won! It's pure luck though!");
+    playerScore++;
     updatePlayerScore();
   } else {
     updateMessage("Uh-oh! Looks like you lost!");
+    computerScore++;
     updateComputerScore();
   }
+
+  if (playerScore === 5 || computerScore === 5) {
+    if (playerScore === 5) {
+      updateMessage("Player has won.");
+    }
+    if (computerScore === 5) {
+      updateMessage("Computer has won.");
+    }
+
+    computerScore = 0;
+    playerScore = 0;
+    updatePlayerScore();
+    updateComputerScore();
+  }
+
   return 0;
 }
 
 // Updates player score
 function updatePlayerScore() {
-  playerScore++;
   playerScoreContainer.textContent = `Player Score: ${playerScore}`;
 }
 
 // Updates computer score
 function updateComputerScore() {
-  computerScore++;
   computerScoreContainer.textContent = `Computer Score: ${computerScore}`;
 }
 
