@@ -2,7 +2,14 @@
 
 ## About
 
-A CLI rock paper scissors page created using HTML and JavaScript. Navigate to the console tab of developer tools and type
-game() to start the game.
+A rock paper scissors game created using HTML, CSS and JavaScript. The game ends when either you or the computer reaches the score of 5.
 
 ## [Live Preview](https://magn3tism.github.io/rock-paper-scissors/)
+
+## Screenshots
+
+![screenshot1](./.screenshots/1.png)
+
+![screenshot2](./.screenshots/2.png)
+
+![screenshot2](./.screenshots/3.png)
