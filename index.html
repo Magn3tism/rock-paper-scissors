@@ -4,19 +4,49 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <h1>Rock Paper Scissors</title>
+  <h1>Rock Paper Scissors</h1>
   
     <div class="actions">
-      <button class="action" data-value="rock">Rock</button>
-      <button class="action" data-value="paper">Paper</button>
-      <button class="action" data-value="scissors">Scissors</button>
+      <div class="player">
+        <h2>Player</h2>
+        <button class="action player-action" data-value="rock">
+          <img src="./images/rock.png" alt="rock" data-value="rock">
+        </button>
+  
+        <button class="action player-action" data-value="paper">
+          <img src="./images/paper.png" alt="paper" data-value="rock">
+        </button>
+        <button class="action  player-action" data-value="scissors">
+          <img src="./images/scissors.png" alt="Score" data-value="rock">
+        </button>
+
+        <div id="player-score" class="score">Player Score: 0</div>
+      </div>
+
+
+      <div class="computer">
+        <h2>Computer</h2>
+        <button class="action computer-action" data-value="1">
+          <img src="./images/rock.png" alt="rock">
+        </button>
+  
+        <button class="action computer-action" data-value="2">
+          <img src="./images/paper.png" alt="paper">
+        </button>
+        <button class="action computer-action" data-value="3">
+          <img src="./images/scissors.png" alt="Score">
+        </button>
+
+        <div id="computer-score" class="score">Computer Score: 0</div>
+      </div>
     </div>
 
-    <div id="player-score">Player Score: 0</div>
-    <div id="computer-score">Computer Score: 0</div>
+    <div id="message">
+    </div>
 </body>
 <script src="./main.js"></script>
 </html>

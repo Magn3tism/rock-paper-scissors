@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+body {
+   background-color: #F1FAEE;
+   font-family: "Fira Sans", 'Times New Roman', Times, serif;
+}
+
+h1 {
+   text-align:  center;
+   color: #457B9D;
+}
+
+h2 {
+   text-align: center;
+   color: #457B9D;
+}
+
+.actions {
+   display: flex;
+   justify-content: space-evenly;
+   margin: 20px;
+}
+
+.action {
+   background: none;
+   height: 200px;
+   width: 200px;
+   border: none;
+   border-radius: 10px;
+}
+
+.player .action:hover {
+   cursor: pointer;
+   background-color: #A8DADC;
+}
+
+.rb {
+   background-color: #E63946;
+}
+
+.bb {
+   background-color: #A8DADC;
+}
+
+img {
+   height: 200px;
+}
+
+.score {
+   font-size: 20px;
+   margin: 20px;
+   text-align: center;
+   color: #1D3557;
+}
+
+#message {
+   text-align: center;
+   margin: 10px;
+   font-size: 18px;
+   color: #1D3557;
+}
